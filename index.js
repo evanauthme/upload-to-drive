@@ -7,9 +7,9 @@ const archiver = require('archiver');
 /** Google Service Account credentials  encoded in base64 */
 const credentials = actions.getInput('credentials', { required: true });
 /** Google Drive Folder ID to upload the file/folder to */
-const folder = actions.getInput('folder', { required: true });
+const folder = actions.getInput('folder', { required: false });
 /** Glob pattern for the file(s) to upload */
-const target = actions.getInput('target', { required: true });
+const target = actions.getInput('target', { required: false });
 /** Optional name for the zipped file */
 const name = actions.getInput('name', { required: false });
 /** Link to the Drive folder */
@@ -25,6 +25,14 @@ const drive = google.drive({ version: 'v3', auth });
 const driveLink = `https://drive.google.com/drive/folders/${folder}`
 
 async function main() {
+  console.log("Hello~~")
+  console.log(credentials);
+  console.log(credentialsJSON);
+    //console.log(target);
+    //console.log(driveLink);
+    //console.log(auth);
+    //console.log(drive);
+    
   actions.setOutput(link, driveLink);
 
   const targets = glob.sync(target);
