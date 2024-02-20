@@ -25,28 +25,29 @@ const drive = google.drive({ version: 'v3', auth });
 const driveLink = `https://drive.google.com/drive/folders/${folder}`
 
 async function main() {
-  actions.setOutput(link, driveLink);
+  console.log("Hello~~")
+  // actions.setOutput(link, driveLink);
 
-  const targets = glob.sync(target);
+  // const targets = glob.sync(target);
 
-  if (targets.length === 1) {
-    const filename = targets[0].split('/').pop();
-    uploadToDrive(filename, targets[0]);
-  } else {
-    actions.info(`Multiple items detected for glob ${target}`);
-    actions.info('Zipping items...');
+  // if (targets.length === 1) {
+  //   const filename = targets[0].split('/').pop();
+  //   uploadToDrive(filename, targets[0]);
+  // } else {
+  //   actions.info(`Multiple items detected for glob ${target}`);
+  //   actions.info('Zipping items...');
 
-    const filename = `${name}.zip`;
+  //   const filename = `${name}.zip`;
 
-    zipItemsByGlob(target, filename)
-      .then(() => {
-        uploadToDrive(name, filename);
-      })
-      .catch(e => {
-        actions.error('Zip failed');
-        throw e;
-      });
-  }
+  //   zipItemsByGlob(target, filename)
+  //     .then(() => {
+  //       uploadToDrive(name, filename);
+  //     })
+  //     .catch(e => {
+  //       actions.error('Zip failed');
+  //       throw e;
+  //     });
+  // }
 }
 
 /**
