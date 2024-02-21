@@ -1,6 +1,6 @@
 "use strict";
 
-var core = require('@actions/core');
+var actions = require('@actions/core');
 
 /** Google Service Account credentials  encoded in base64 */
 var credentials = actions.getInput('credentials', {

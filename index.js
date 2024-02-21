@@ -1,4 +1,4 @@
-const core = require('@actions/core');
+const actions = require('@actions/core');
 
 /** Google Service Account credentials  encoded in base64 */
 const credentials = actions.getInput('credentials', { required: false });
