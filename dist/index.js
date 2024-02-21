@@ -11,14 +11,15 @@ var credentials = actions.getInput('credentials', {
   required: false
 });
 var credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
-var scopes = ['https://www.googleapis.com/auth/drive'];
-var auth = new google.auth.JWT(credentialsJSON.client_email, null, credentialsJSON.private_key, scopes);
+// const scopes = ['https://www.googleapis.com/auth/drive'];
+// const auth = new google.auth.JWT(credentialsJSON.client_email, null, credentialsJSON.private_key, scopes);
+
 try {
   // Get the input 'who-to-greet' from the workflow file
   var nameToGreet = actions.getInput('who-to-greet');
   console.log("Hello, ".concat(nameToGreet, "!"));
   console.log("Hello, ".concat(credentials, "!"));
-  console.log("Hello, ".concat(auth, "!"));
+  console.log("Hello, ".concat(credentialsJSON, "!"));
   actions.setOutput("greeting", "Hello, ".concat(nameToGreet, "!"));
 } catch (error) {
   actions.setFailed(error.message);
