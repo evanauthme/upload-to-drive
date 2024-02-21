@@ -4,12 +4,9 @@
   "description": "Github action to upload files or folders to Google Drive",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jodebu/upload-to-drive"
+    "url": "https://github.com/evanauthme/upload-to-drive"
   },
   "main": "index.js",
-  "scripts": {
-    "build": "ncc build index.js -C -m -o dist"
-  },
   "author": "Yayo Acosta",
   "license": "ISC",
   "dependencies": {
@@ -21,8 +18,7 @@
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
-    "@babel/preset-env": "^7.23.9",
-    "@zeit/ncc": "^0.22.3"
+    "@babel/preset-env": "^7.23.9"
   },
   "scripts": {
   "build": "babel index.js --out-file dist/index.js"
