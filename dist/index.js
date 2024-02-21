@@ -8,10 +8,10 @@ var credentials = actions.getInput('credentials', {
 });
 try {
   // Get the input 'who-to-greet' from the workflow file
-  var nameToGreet = core.getInput('who-to-greet');
+  var nameToGreet = actions.getInput('who-to-greet');
   console.log("Hello, ".concat(nameToGreet, "!"));
   console.log("Hello, ".concat(credentials, "!"));
-  core.setOutput("greeting", "Hello, ".concat(nameToGreet, "!"));
+  actions.setOutput("greeting", "Hello, ".concat(nameToGreet, "!"));
 } catch (error) {
-  core.setFailed(error.message);
+  actions.setFailed(error.message);
 }

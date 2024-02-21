@@ -5,10 +5,10 @@ const credentials = actions.getInput('credentials', { required: false });
 
 try {
   // Get the input 'who-to-greet' from the workflow file
-  const nameToGreet = core.getInput('who-to-greet');
+  const nameToGreet = actions.getInput('who-to-greet');
   console.log(`Hello, ${nameToGreet}!`);
   console.log(`Hello, ${credentials}!`);
-  core.setOutput("greeting", `Hello, ${nameToGreet}!`);
+  actions.setOutput("greeting", `Hello, ${nameToGreet}!`);
 } catch (error) {
-  core.setFailed(error.message);
+  actions.setFailed(error.message);
 }
