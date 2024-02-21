@@ -7,7 +7,7 @@ const glob = require('glob');
 /** Google Service Account credentials  encoded in base64 */
 const credentials = actions.getInput('credentials', { required: false });
 
-const credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
+// const credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
 const scopes = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file'];
 // const scopes = ['https://www.googleapis.com/auth/drive'];
 // const auth = new google.auth.JWT(credentialsJSON.client_email, null, credentialsJSON.private_key, scopes);

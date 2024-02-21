@@ -12,7 +12,8 @@ var glob = require('glob');
 var credentials = actions.getInput('credentials', {
   required: false
 });
-var credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
+
+// const credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
 var scopes = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file'];
 // const scopes = ['https://www.googleapis.com/auth/drive'];
 // const auth = new google.auth.JWT(credentialsJSON.client_email, null, credentialsJSON.private_key, scopes);
