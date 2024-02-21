@@ -19,6 +19,12 @@
     "googleapis": "^51.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@zeit/ncc": "^0.22.3"
+  },
+  "scripts": {
+  "build": "babel index.js --out-file dist/index.js"
   }
 }
