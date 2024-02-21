@@ -5,7 +5,6 @@ var _require = require('googleapis'),
   google = _require.google;
 var fs = require('fs');
 var glob = require('glob');
-var archiver = require('archiver');
 
 /** Google Service Account credentials  encoded in base64 */
 var credentials = actions.getInput('credentials', {
